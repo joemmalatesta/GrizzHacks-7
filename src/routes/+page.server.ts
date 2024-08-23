@@ -1,10 +1,48 @@
 import type { Actions } from './$types';
+import { MongoClient, ServerApiVersion } from 'mongodb';
+import { MONGO_PASSWORD } from '$env/static/private';
+
+const uri = `mongodb+srv://grizzhacksou:${MONGO_PASSWORD}@people.1psmn.mongodb.net/?retryWrites=true&w=majority&appName=People`;
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri);
 
 export const actions = {
     default: async ({ request }) => {
         const formData = await request.formData();
         const email = formData.get('email');
-        // Process the form data and perform actions
-        return { success: true };
-      },
+        if (!email) {
+            return { success: false, message: "Email is required" };
+        }
+        // Add to mongo
+        try {
+            // Connect the client to the server
+            await client.connect();
+
+            // Define the database and collection
+            const db = client.db("people");
+            const collection = db.collection("users");
+
+            // Create a new email document
+            const emailDocument = {
+                email: email,
+                addedAt: new Date(), // Optional: Add timestamp
+            };
+
+            // Insert the email into the collection
+            const result = await collection.insertOne(emailDocument);
+
+            // Success message
+            console.log(`Email added with id: ${result.insertedId}`);
+
+            return { success: true, message: "Email added successfully" };
+
+        } catch (error) {
+            console.error("Error adding email:", error);
+            return { success: false, message: "Failed to add email" };
+        } finally {
+            // Close the client connection if needed
+            await client.close();
+        }
+    },
 } satisfies Actions;
