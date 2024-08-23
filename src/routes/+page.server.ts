@@ -44,7 +44,7 @@ export const actions = {
 
             // Success message
             console.log(`Email added with id: ${result.insertedId}`);
-            sendEmail(email)
+            await sendEmail(email)
 
             return { success: true, message: "Email added successfully" };
 
