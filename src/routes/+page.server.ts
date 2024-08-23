@@ -1,8 +1,8 @@
 import type { Actions } from './$types';
 import { MongoClient, ServerApiVersion } from 'mongodb';
-import { MONGO_PASSWORD } from '$env/static/private';
+import { MONGO_PASSWORD, MONGO_USERNAME } from '$env/static/private';
 
-const uri = `mongodb+srv://grizzhacksou:${MONGO_PASSWORD}@people.1psmn.mongodb.net/?retryWrites=true&w=majority&appName=People`;
+const uri = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@people.1psmn.mongodb.net/?retryWrites=true&w=majority&appName=People`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri);
@@ -22,6 +22,12 @@ export const actions = {
             // Define the database and collection
             const db = client.db("people");
             const collection = db.collection("users");
+            
+            const existingEmail = await collection.findOne({ email: email });
+
+            if (existingEmail) {
+                return { success: false, message: "This email is already registered" };
+            }
 
             // Create a new email document
             const emailDocument = {

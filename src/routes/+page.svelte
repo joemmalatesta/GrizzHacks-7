@@ -42,7 +42,7 @@
 </script>
 
 <main class="relative w-screen h-screen overflow-hidden flex justify-center items-center sm:items-start bg-[#f6f6e9]">
-	<div class="flex flex-col sm:mt-40 items-center">
+	<div class="flex flex-col sm:mt-40 items-center ">
 		<div class="relative">
 			<h1
 				class="inset-0 text-5xl md:text-7xl xl:text-[6.5rem] font-bold text-[#A89a64] lg:translate-y-1 translate-y-0.5 opacity-50"
@@ -53,7 +53,7 @@
 				GrizzHacks 7
 			</h1>
 		</div>
-		<form method="POST" class="w-full flex flex-col lg:flex-row text-lg lg:text-xl ring-2 ring-[#3281A8] rounded-md">
+		<form method="POST" class="w-full flex flex-col lg:flex-row text-lg lg:text-xl ring-2 ring-[#3281A8] rounded-md z-50 mt-2">
 			<input
 				placeholder="your email"
 				type="email"
@@ -64,7 +64,7 @@
 			<button class="lg:w-1/4 w-full bg-[#3281A8] text-white lg:rounded-bl-none rounded-b-md lg:rounded-r-md p-1 lg:p-2 font-recoleta">Notify me</button
 			>
 		</form>
-		<p class="font-recoleta opacity-60 my-1 font-medium">{form?.success ? "Success! you'll hear from us soon" :"Get notified when applications open"}</p>
+		<p class="font-recoleta opacity-60 my-1 font-medium">{form?.success ? "Success! you'll hear from us soon" : form?.message ? form.message :"Get notified when applications open"}</p>
 	</div>
 
 	<div class="w-full bottom-0 absolute">
@@ -81,6 +81,12 @@
 			</button>
 			<img src="water.svg" class="w-full scale-110 sm:translate-y-10 lg:translate-y-14 xl:translate-y-28 z-30" alt="" />
 		</div>
+		<flex class="justify-between md:mx-10 mx-2 absolute md:bottom-5 bottom-1 text-white">
+			<div class="flex gap-2">
+			<p class="md:text-lg text-sm font-recoleta">Need <a class="underline underline-offset-2 transition-all hover:underline-offset-4" href="mailto:grizzhacksou@gmail.com">help?</a></p>	
+			</div>
+			<p class=" text-white md:text-lg text-sm font-recoleta">Looking to <a class="underline underline-offset-2 transition-all hover:underline-offset-4" href="mailto:grizzhacksou@gmail.com">sponsor?</a></p>
+		</flex>
 	</div>
 </main>
 
