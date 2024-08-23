@@ -41,8 +41,8 @@
 	};
 </script>
 
-<main class="relative w-screen h-screen overflow-hidden flex justify-center items-center sm:items-start bg-[#f6f6e9]">
-	<div class="flex flex-col sm:mt-40 items-center ">
+<main class="relative w-screen h-screen overflow-hidden flex justify-center bg-[#f6f6e9]">
+	<div class="flex flex-col sm:mt-40 mt-60 items-center ">
 		<div class="relative">
 			<h1
 				class="inset-0 text-5xl md:text-7xl xl:text-[6.5rem] font-bold text-[#A89a64] lg:translate-y-1 translate-y-0.5 opacity-50"
@@ -53,7 +53,7 @@
 				GrizzHacks 7
 			</h1>
 		</div>
-		<form method="POST" class="w-full flex flex-col lg:flex-row text-lg lg:text-xl ring-2 ring-[#3281A8] rounded-md z-50 mt-2">
+		<form method="POST" class="w-full flex flex-col lg:flex-row text-lg lg:text-xl ring-2 ring-[#3281A8] rounded-md z-50 mt-4">
 			<input
 				placeholder="your email"
 				type="email"
@@ -69,7 +69,7 @@
 
 	<div class="w-full bottom-0 absolute">
 		<div class="relative">
-			<button on:click={duckClicked} class="absolute -top-7 left-36 cursor-pointer scale-75 -translate-y-24 -translate-x-20 lg:scale-100 sm:scale-90 sm:-translate-y-12 lg:-translate-y-7 xl:translate-y-5 2xl:scale-110 2xl:translate-y-12 2xl:translate-x-14">
+			<button on:click={duckClicked} class="absolute -top-28 left-32 sm:-top-8 sm:left-36 cursor-pointer scale-75 -translate-y-24 -translate-x-20 lg:scale-100 sm:scale-90 sm:-translate-y-12 lg:-translate-y-7 xl:translate-y-10 2xl:scale-110 2xl:translate-y-12 2xl:translate-x-14">
 				{#each quacks as quack}
 					<p transition:fade={{duration: 50 }} class="{quack} font-recoleta">quack</p>
 				{/each}
@@ -79,13 +79,14 @@
 					alt=""
 				/>
 			</button>
-			<img src="water.svg" class="w-full scale-110 sm:translate-y-10 lg:translate-y-14 xl:translate-y-28 z-30" alt="" />
+			<img src="water.svg" class="w-full -translate-y-20 scale-125 md:scale-110 sm:translate-y-10 lg:translate-y-14 xl:translate-y-28 z-30" alt="" />
+			<div class="sm:hidden absolute bottom-0 w-full h-20 bg-[#3d81a8]"></div>
 		</div>
 		<flex class="justify-between md:mx-10 mx-2 absolute md:bottom-5 bottom-1 text-white">
 			<div class="flex gap-2">
-			<p class="md:text-lg text-sm font-recoleta">Need <a class="underline underline-offset-2 transition-all hover:underline-offset-4" href="mailto:grizzhacksou@gmail.com">help?</a></p>	
+			<p class="md:text-lg font-recoleta">Need <a class="underline underline-offset-2 transition-all hover:underline-offset-4" href="mailto:grizzhacksou@gmail.com">help?</a></p>	
 			</div>
-			<p class=" text-white md:text-lg text-sm font-recoleta">Looking to <a class="underline underline-offset-2 transition-all hover:underline-offset-4" href="mailto:grizzhacksou@gmail.com">sponsor?</a></p>
+			<p class=" text-white md:text-lg font-recoleta">Looking to <a class="underline underline-offset-2 transition-all hover:underline-offset-4" href="mailto:grizzhacksou@gmail.com">sponsor?</a></p>
 		</flex>
 	</div>
 </main>
