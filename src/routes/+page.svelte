@@ -42,7 +42,7 @@
 </script>
 
 <main class="relative w-screen h-screen overflow-hidden flex justify-center bg-[#f6f6e9]">
-	<div class="flex flex-col sm:mt-40 mt-60 items-center ">
+	<div class="flex flex-col mt-40 items-center ">
 		<div class="relative">
 			<h1
 				class="inset-0 text-5xl md:text-7xl xl:text-[6.5rem] font-bold text-[#A89a64] lg:translate-y-1 translate-y-0.5 opacity-50"
@@ -80,7 +80,7 @@
 				/>
 			</button>
 			<img src="water.svg" class="w-full -translate-y-20 scale-125 md:scale-110 sm:translate-y-10 lg:translate-y-14 xl:translate-y-28 z-30" alt="" />
-			<div class="sm:hidden absolute bottom-0 w-full h-20 bg-[#3d81a8]"></div>
+			<div class="sm:hidden absolute -bottom-1 w-full h-20 bg-[#3d81a8]"></div>
 		</div>
 		<flex class="justify-between md:mx-10 mx-2 absolute md:bottom-5 bottom-1 text-white">
 			<div class="flex gap-2">
