@@ -10,7 +10,7 @@ const client = new MongoClient(uri);
 export const actions = {
     default: async ({ request }) => {
         const formData = await request.formData();
-        const email = formData.get('email');
+        const email = String(formData.get('email')).toLowerCase();
         if (!email) {
             return { success: false, message: "Email is required" };
         }
