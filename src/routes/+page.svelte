@@ -65,6 +65,7 @@
 			>
 		</form>
 		<p class="font-recoleta opacity-60 my-1 font-medium">{form?.success ? "Success! you'll hear from us soon" : form?.message ? form.message :"Get notified when applications open"}</p>
+		<p class="font-recoleta opacity-60 my-1 font-medium pt-20 text-xl">OU student? <a class="underline underline-offset-2 transition-all hover:underline-offset-4" target="_blank" href="https://forms.gle/vfjn3LxYVEi2iJdH6">help us coordinate!</a></p>
 	</div>
 
 	<div class="w-full bottom-0 absolute">
