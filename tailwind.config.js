@@ -6,6 +6,7 @@ export default {
       light: "#f6f6e9",
       primary: "#3d81a8",
       secondary: "#a89a64",
+      heading: "#f8e894"
     },
     extend: {
       fontFamily: {

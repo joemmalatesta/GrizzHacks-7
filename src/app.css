@@ -74,5 +74,11 @@ p,h3,h4,h5,h6 {
 }
 
 body{
-    @apply selection:bg-[#3281A8] selection:text-white
+    @apply selection:bg-primary selection:text-light
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
 }

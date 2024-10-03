@@ -3,8 +3,12 @@
 
 </script>
 
-<section class="h-screen w-full bg-primary p-2 py-10">
-		<h3 class="text-2xl font-medium font-recoleta text-white text-center">About</h3>
+<section id="about" class="h-screen w-full bg-primary p-2 py-10">
+		<h3 class="text-3xl font-medium font-recoleta text-heading text-center sm:text-6xl">About</h3>
+		<div class="flex flex-col sm:flex-row text-light">
+			<p class="text-lg">A quackathon is coming to Oakland!</p>
+			<p class="">We're bringing GrizzHacks back</p>
+		</div>
 		<p>We're back at OU with a Quackathon
 			GrizzHacks is a 24 hour engineering marathon, welcome to anyone. Whether you're a seasoned developer building a new idea, a beginner looking to sharpen your skills, or a unrelated major just interested in learning more, we have something for you!
 			
