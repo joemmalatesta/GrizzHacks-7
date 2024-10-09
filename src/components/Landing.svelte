@@ -105,3 +105,4 @@
 		</flex>
 	</div>
 </div>
+<audio src="/quack.mp3" bind:this={audio}></audio>
